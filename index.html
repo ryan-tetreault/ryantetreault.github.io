@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Photography</title>
+  <meta name="description" content="Photography portfolio of Your Name: landscapes, portraits, and editorial work." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <meta property="og:title" content="Your Name — Photography" />
+  <meta property="og:description" content="Selected works and contact information." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/cover.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Your Name",
+    "url":"https://yourdomain.com",
+    "jobTitle":"Photographer",
+    "sameAs":["https://www.instagram.com/yourhandle"]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Your Name</h1>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Featured image">
+      <img src="images/cover-1600.jpg"
+           srcset="images/cover-800.jpg 800w, images/cover-1200.jpg 1200w, images/cover-1600.jpg 1600w"
+           sizes="(max-width: 900px) 100vw, 1200px"
+           alt="Signature photograph description" />
+      <div class="hero-text">
+        <h2>Photography Portfolio</h2>
+        <p>Editorial • Portrait • Landscape</p>
+      </div>
+    </section>
+
+    <section id="work" class="gallery">
+      <h2>Selected Work</h2>
+      <div class="filters" role="tablist" aria-label="Gallery filters">
+        <button class="active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button data-filter="portraits" role="tab">Portraits</button>
+        <button data-filter="landscape" role="tab">Landscape</button>
+        <button data-filter="editorial" role="tab">Editorial</button>
+      </div>
+
+      <ul class="grid" id="grid">
+        <!-- Repeat <li> blocks for your images -->
+        <li class="card" data-cat="portraits">
+          <a href="images/p1-2000.jpg" class="lightbox" aria-label="Open full image">
+            <img
+              src="images/p1-600.jpg"
+              srcset="images/p1-400.jpg 400w, images/p1-800.jpg 800w, images/p1-1200.jpg 1200w"
+              sizes="(max-width: 700px) 48vw, (max-width: 1200px) 31vw, 300px"
+              loading="lazy" alt="Portrait description">
+          </a>
+        </li>
+
+        <li class="card" data-cat="landscape">
+          <a href="images/l1-2000.jpg" class="lightbox" aria-label="Open full image">
+            <img
+              src="images/l1-600.jpg"
+              srcset="images/l1-400.jpg 400w, images/l1-800.jpg 800w, images/l1-1200.jpg 1200w"
+              sizes="(max-width: 700px) 48vw, (max-width: 1200px) 31vw, 300px"
+              loading="lazy" alt="Landscape description">
+          </a>
+        </li>
+
+        <!-- add more... -->
+      </ul>
+      <dialog id="dlg" aria-label="Image viewer">
+        <img id="dlgImg" alt="">
+        <button id="closeDlg" class="close">×</button>
+      </dialog>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About</h2>
+      <p>Short bio: where you’re based, specialties, clients/publications, and what you’re available for.</p>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <form name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
+        <label> Name <input name="name" required></label>
+        <label> Email <input type="email" name="email" required></label>
+        <label> Message <textarea name="message" rows="5" required></textarea></label>
+        <button type="submit">Send</button>
+      </form>
+      <p class="social">Also on <a href="https://instagram.com/yourhandle">Instagram</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Your Name. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
